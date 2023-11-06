@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="back-img"> 
+        <div class="logo-container">
+            <img class="logo" src="images/rocket-5029889_640.png" alt="rocketship">
+            <h2 class="slogan">Tethys</h2>
+        </div>
+    </div>
+    <div class="right-content">
+        <div class="text"><p>Please note <br> This is not a real online service!
+                            <br> <h3>Where will your journey take you Sign up today </h3></p></div>
+            <div class="form">
+                <span><strong>* Denontes required field</strong></span>
+                <form action="" method="get" id="account">
+                    <fieldset>
+                        <h3 class="form-heading">Voyager details</h3>
+                        <section>
+                            <div class="left-entry">
+                                <label for="first-name"><span aria-label="required"><strong>*</strong></span> First Name</label>
+                                <input type="text" id="first-name" name="first-name" pattern="[a-zA-Z]+">
+                            </div>
+                            <div class="right-entry">
+                                <label for="last-name"><span aria-label="required"><strong>*</strong></span> Last Name</label>
+                                <input type="text" id="last-name" name="last-name" pattern="[a-zA-Z]+">
+                            </div>   
+                        </section>
+                        <section>
+                            <div class="left-entry">
+                                <label for="email-add"><span aria-label="required"><strong>*</strong></span> Email</label>
+                                <input type="email" id="email-add" name="email" placeholder="Example@Tethys.com">
+                            </div>
+                            <div class="right-entry">
+                                <label for="phone-number" aria-label="phone number optional">Phone Number</label>
+                                <input type="text" id="phone-number" name="phone" pattern="[0-9]{11}">
+                            </div> 
+                        </section>
+                       
+                        <section>
+                            
+                            <div class="left-entry">    
+                                <label for="password"><span aria-label="required"><strong>*</strong></span>Password</label>
+                                <input type="text" id="password" name="password" placeholder="minimum 4 charcters" minlength="4">
+                            </div>
+                            <div class="right-entry">
+                                <label for="confirm-password"><span aria-label="required"><strong>*</strong></span>Confirm password</label>
+                                <input type="text" id="confirm-password" name="confirm-password" minlength="4">
+                            </div>    
+                        </section>
+                    </fieldset>
+                </form>
+                <div class="submit">
+                    <button type="submit" form="account" value="Submit">Submit</button>
+                </div>
+            </div>
+    </div>
+    <script>
+         const password=document.querySelector('input[name="password"]')
+         const confirm=document.querySelector('input[name="confirm-password"]')
+            function checkPassword() {
+                if(password.value===confirm.value){
+                    confirm.setCustomValidity('');
+                    
+                }else confirm.setCustomValidity('Passwords do not match');
+            }
+            confirm.onchange = checkPassword;
+    </script>
+</body>
+</html>
